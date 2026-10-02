@@ -4,6 +4,10 @@ A browser extension that lists unread Slack conversations and saved messages in
 one Gmail-style tab. It calls Slack with the session cookie the browser already
 holds. Nothing is stored outside the browser and no token is configured.
 
+![Slack Inbox listing unread conversations from two workspaces, with one conversation expanded](docs/screenshot.png)
+
+The screenshot shows mock data.
+
 ## Status
 
 Unofficial. Not affiliated with Slack. The extension calls the Slack web
