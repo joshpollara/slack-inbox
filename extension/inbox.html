@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slack Inbox</title>
+    <link rel="icon" href="icons/48.png" />
+    <link rel="stylesheet" href="inbox.css" />
+  </head>
+  <body>
+    <header class="top">
+      <h1>Slack Inbox</h1>
+      <span id="status" class="status" role="status"></span>
+      <button id="refresh" class="btn" type="button" title="Refresh (r)">Refresh</button>
+      <button id="settings-open" class="btn" type="button">Settings</button>
+    </header>
+    <div class="layout">
+      <nav class="side" aria-label="Views">
+        <button class="nav-item" type="button" data-view="inbox">
+          <span>Inbox</span><span class="n" id="n-inbox"></span>
+        </button>
+        <button class="nav-item" type="button" data-view="saved">
+          <span>Saved</span><span class="n" id="n-saved"></span>
+        </button>
+        <dl class="keys">
+          <div><dt>j k</dt><dd>Move</dd></div>
+          <div><dt>Enter</dt><dd>Expand</dd></div>
+          <div><dt>o</dt><dd>Open in browser</dd></div>
+          <div><dt>O</dt><dd>Open in desktop app</dd></div>
+          <div><dt>e</dt><dd>Mark read or complete</dd></div>
+          <div><dt>1 2</dt><dd>Inbox, Saved</dd></div>
+          <div><dt>r</dt><dd>Refresh</dd></div>
+        </dl>
+      </nav>
+      <main>
+        <div id="notice" class="notice" hidden></div>
+        <div id="list" class="list" role="list"></div>
+      </main>
+    </div>
+    <dialog id="settings" class="settings" aria-labelledby="settings-title">
+      <form id="ws-form">
+        <h2 id="settings-title">Settings</h2>
+        <label for="ws">Workspaces</label>
+        <input id="ws" autocomplete="off" spellcheck="false" placeholder="your-workspace" required />
+        <p class="hint">Comma separated. A name means name.slack.com.</p>
+        <div class="settings-actions">
+          <button id="settings-cancel" class="btn" type="button">Cancel</button>
+          <button class="btn primary" type="submit">Save</button>
+        </div>
+      </form>
+    </dialog>
+    <div id="open-menu" class="menu" role="menu" aria-label="Open in" hidden></div>
+    <div id="toast" class="toast" role="alert" hidden></div>
+    <script type="module" src="inbox.js"></script>
+  </body>
+</html>

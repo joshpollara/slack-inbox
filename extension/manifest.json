@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Slack Inbox",
+  "version": "0.1.0",
+  "description": "Unread Slack conversations and saved messages in one list.",
+  "action": { "default_title": "Open Slack Inbox" },
+  "background": { "service_worker": "bg.js" },
+  "host_permissions": ["https://*.slack.com/*"],
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" }
+}
